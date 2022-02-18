@@ -1,0 +1,97 @@
+[
+  {
+    "id":"tab",
+    "component": "q-tabs",
+    "defaultValue":"tab1",
+    "slot":[
+      {
+        "component": "q-tab",
+        "internalLabels":true,
+        "label":"Tab 1",
+        "name":"tab1"
+      },
+      {
+        "component": "q-tab",
+        "internalLabels":true,
+        "label":"Tab 2",
+        "name":"tab2"
+      }      
+    ]
+  },
+  {
+    "component": "q-separator"
+  },
+  {
+    "id": "powerOrigin",
+    "label": "Power origin",
+    "internalLabels": true,
+    "subLabel": "Where does your power come from?",
+    "component": "q-select",
+    "outlined": true,
+      "options": [
+        "Google", "Facebook", "Twitter", "Apple", "Oracle"
+      ],
+      "dynamicProps": ["showCondition"],
+      "showCondition": "/function(val, { formData }){return formData.tab=='tab1'}/"      
+  },
+  {
+    "id": "text",
+    "component": "q-input",
+    "outlined": true,
+    "filled":true,
+    "internalLabels":true,
+    "label":"Text",
+    "type":"textarea",
+    "dynamicProps": ["showCondition"],
+    "showCondition": "/function(val, { formData }){return formData.tab=='tab1'}/" 
+  },
+  {
+    "id": "mail",
+    "component": "q-checkbox",
+    "internalLabels":true,
+    "label":"Send Mail xx",
+    "defaultValue":false,
+    "dynamicProps": ["showCondition"],
+    "showCondition": "/function(val, { formData }){return formData.tab=='tab2'}/" 
+  },
+  {
+    "id": "parsedvalue",
+    "component": "q-input",
+    "outlined": true,
+    "internalLabels":true,
+    "label": "Superhero name xx",
+    "subLabel": "Think of something cool.",
+    "dynamicProps": ["showCondition"],
+    "showCondition": "/function(val, { formData }){return formData.tab=='tab2'}/" 
+  },
+  {
+    "id": "powerUps",
+    "span": 1,
+    "component": "BlitzForm",
+    "label": "Choose some power-ups",
+    "columnCount": 3,
+    "schema": [
+      {
+        "id": "iso-8",
+        "component": "input",
+        "type": "checkbox",
+        "label": "Magic crystal",
+        "labelStyle": "font-size: 0.8em"
+      },
+      {
+        "id": "hp-potion",
+        "component": "input",
+        "type": "checkbox",
+        "label": "Health potion",
+        "labelStyle": "font-size: 0.8em"
+      },
+      {
+        "id": "energy-potion",
+        "component": "input",
+        "type": "checkbox",
+        "label": "Energy drink",
+        "labelStyle": "font-size: 0.8em"
+      }
+    ]
+  }
+]
